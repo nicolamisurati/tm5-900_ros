@@ -252,7 +252,7 @@ Below there a list of the main errors that have occurred together with the best 
     The error was due to the _∼/.ignition/fuel/config.yaml_ file that pointed to the old ignition fuel domain. It can be solved by replacing in the same file the url: _https://api.ignitionfuel.org_ with the url: _https://api.ignitionrobotics.org_
     &nbsp;
 - ```
-  [WARN] [1638864622.805540535]: Skipping virtual joint “FixedBase” because its child frame “base” does not match the URDF frame “world”
+  [WARN] [1638864622.805540535]: Skipping virtual joint “FixedBase”, its child frame “base” does not match the URDF frame “world”
    ```
   Solved this error by modifying in _∼/catkin ws/src/tm5_900_moveit_config/config_ the virtual joint line as: 
     ```
