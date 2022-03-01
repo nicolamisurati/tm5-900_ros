@@ -1,6 +1,7 @@
 # __User Guide for the repository TM5-900_ROS__
 
-This repository is made for the project Dynamics of Intelligent Robots and Vehicle of the course held by the Professor Andrea Bonci; The authors are Nicola Misurati, Laura Piccini and Valerio Procaccioli.
+This repository is made for the project Dynamics of Intelligent Robots and Vehicle of the course held by the Professor Andrea Bonci
+The authors are Nicola Misurati, Laura Piccini and Valerio Procaccioli.
 
 ## Prerequisites
 [Ubuntu] 18.04.6 LTS (Bionic Beaver) running; for this project it was necessary to create a virtual machine using [Oracle VM VirtualBox]. It is raccomended to give the VM at least half the RAM available and to reserve about 20 GB for the virtual hard disk. [Guest Additions] are also required. 
@@ -250,13 +251,13 @@ Below there a list of the main errors that have occurred together with the best 
    libcurl: (51) SSL: no alternative certificate subject name matches target host name 'api.ignitionfuel.org'
     ```
     The error was due to the _∼/.ignition/fuel/config.yaml_ file that pointed to the old ignition fuel domain. It can be solved by replacing in the same file the url: _https://api.ignitionfuel.org_ with the url: _https://api.ignitionrobotics.org_
-    &nbsp;
+    &nbsp;    
 - ```
-  [WARN] [1638864622]: Skipping virtual joint “FixedBase” because its child frame “base” does not match the URDF frame “world”
+  [WARN] [1638864622]: Skipping virtual joint "FixedBase" because its child frame "base" does not match the URDF frame "world"
    ```
   Solved this error by modifying in _∼/catkin ws/src/tm5_900_moveit_config/config_ the virtual joint line as: 
     ```
-  <virtual joint name=“FixedBase” type=“fixed” parent frame=“base link” child link=”world” />
+  <virtual joint name= "FixedBase" type= "fixed" parent frame= "base link" child link= "world" />
     ```
     &nbsp;
 - ``` 
@@ -268,7 +269,7 @@ Below there a list of the main errors that have occurred together with the best 
 - ``` 
   “No p gain specified for pid. Namespace: /gazebo_ros_control/pid_gains/shoulder_1_joint ...”
   ``` 
-  It’s not really an error. In fact, if PID parameters were found, Gazebo will use PID controllers in ROS to control the joints, otherwise, the joints will be controlled with Gazebo methods.
+  It’s not really an error. In fact, if PID parameters were found, Gazebo will use PID controllers in ROS to control the joints; otherwise, the joints will be controlled with Gazebo methods.
   
    [Ubuntu]: <https://releases.ubuntu.com/18.04/>
    [Oracle VM VirtualBox]: <https://www.virtualbox.org/>
