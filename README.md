@@ -239,8 +239,32 @@ The commands to import this are:
 git clone https://github.com/andreasBihlmaier/gazebo2rviz
 ```
 
+### FAQ and Common Errors
+The management of errors that may be encountered during development is fundamental for the
+correct realization of the project. 
+Often in fact, the research and resolution of errors is a complex process, especially in the robotic field where hardware and physics put the sticks between wheels to those looking to perform software tests and updates. 
 
-
+Below there a list of the main errors that have occurred together with the best practices to avoid or resolve them:
+-  ```
+   [Err] [REST.cc:205] Error in REST request
+   libcurl: (51) SSL: no alternative certificate subject name matches target host name 'api.ignitionfuel.org'
+    ```
+    The error was due to the _∼/.ignition/fuel/config.yaml_ file that pointed to the old ignition fuel domain. It can be solved by replacing in the same file the url: _https://api.ignitionfuel.org_ with the url: _https://api.ignitionrobotics.org_
+    &nbsp;
+- ```
+  [WARN] [1638864622.805540535]: Skipping virtual joint “FixedBase” because its child frame “base” does not match the URDF frame “world”
+   ```
+  Solved this error by modifying in _∼/catkin ws/src/tm5_900_moveit_config/config_ the virtual joint line as: 
+    ```
+  <virtual joint name=“FixedBase” type=“fixed” parent frame=“base link” child link=”world” />
+    ```
+    &nbsp;
+- ``` 
+  ERROR: cannot launch node of type [robot_state_publisher/state_publisher]: robot_state_publisher
+  ``` 
+  In the _tm5 900_moveit_planning_execution.launch_ file and in the _tm5_900_gazebo.launch_ file there are two nodes with the same name and function (_robot state publisher_).
+  The node has to be commented on in either one of the two files to work out the issue.
+   
    [Ubuntu]: <https://releases.ubuntu.com/18.04/>
    [Oracle VM VirtualBox]: <https://www.virtualbox.org/>
    [Guest Additions]: <https://www.virtualbox.org/manual/ch04.html>
