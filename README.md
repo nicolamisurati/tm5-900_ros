@@ -252,7 +252,7 @@ Below there a list of the main errors that have occurred together with the best 
     The error was due to the _∼/.ignition/fuel/config.yaml_ file that pointed to the old ignition fuel domain. It can be solved by replacing in the same file the url: _https://api.ignitionfuel.org_ with the url: _https://api.ignitionrobotics.org_
     &nbsp;
 - ```
-  [WARN] [1638864622.805540535]: Skipping virtual joint “FixedBase”, its child frame “base” does not match the URDF frame “world”
+  [WARN] [1638864622]: Skipping virtual joint “FixedBase” because its child frame “base” does not match the URDF frame “world”
    ```
   Solved this error by modifying in _∼/catkin ws/src/tm5_900_moveit_config/config_ the virtual joint line as: 
     ```
@@ -262,9 +262,14 @@ Below there a list of the main errors that have occurred together with the best 
 - ``` 
   ERROR: cannot launch node of type [robot_state_publisher/state_publisher]: robot_state_publisher
   ``` 
-  In the _tm5 900_moveit_planning_execution.launch_ file and in the _tm5_900_gazebo.launch_ file there are two nodes with the same name and function (_robot state publisher_).
+  In the _tm5 900_moveit_planning_execution.launch_ file and in the _tm5_900_gazebo.launch_ file there are two nodes with the same name and function (_robot_state_publisher_).
   The node has to be commented on in either one of the two files to work out the issue.
-   
+   &nbsp;
+- ``` 
+  “No p gain specified for pid. Namespace: /gazebo_ros_control/pid_gains/shoulder_1_joint ...”
+  ``` 
+  It’s not really an error. In fact, if PID parameters were found, Gazebo will use PID controllers in ROS to control the joints, otherwise, the joints will be controlled with Gazebo methods.
+  
    [Ubuntu]: <https://releases.ubuntu.com/18.04/>
    [Oracle VM VirtualBox]: <https://www.virtualbox.org/>
    [Guest Additions]: <https://www.virtualbox.org/manual/ch04.html>
