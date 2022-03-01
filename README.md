@@ -1,11 +1,12 @@
 # __User Guide for the repository TM5-900_ROS__
 
 This repository is made for the project Dynamics of Intelligent Robots and Vehicle of the course held by the Professor Andrea Bonci.
-
 The authors are Nicola Misurati, Laura Piccini and Valerio Procaccioli.
 
 ## Prerequisites
-[Ubuntu] 18.04.6 LTS (Bionic Beaver) running; for this project it was necessary to create a virtual machine using [Oracle VM VirtualBox]. It is raccomended to give the VM at least half the RAM available and to reserve about 20 GB for the virtual hard disk. [Guest Additions] are also required. 
+[Ubuntu] 18.04.6 LTS (Bionic Beaver) running.
+For this project it was necessary to create a virtual machine using [Oracle VM VirtualBox]. It is raccomended to give the VM at least half the RAM available and to reserve about 20 GB for the virtual hard disk. 
+[Guest Additions] are also required. 
 
 ### ROS Installation
 [Ros Melodic] is the version required based on the Linux release selected.
