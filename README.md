@@ -1,6 +1,7 @@
 # __User Guide for the repository TM5-900_ROS__
 
 This repository is made for the project Dynamics of Intelligent Robots and Vehicle of the course held by the Professor Andrea Bonci.
+
 The authors are Nicola Misurati, Laura Piccini and Valerio Procaccioli.
 
 ## Prerequisites
