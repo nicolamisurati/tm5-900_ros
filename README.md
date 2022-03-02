@@ -236,7 +236,15 @@ It is possibile to check the topics that are being published by running in a new
 rostopic list
 ```
 
-For an optimized experience we have created a Gazebo world in which the Kinect is already present in the desired position, in order to start Gazebo with these settings. The _kinect.world_ file must be added on _usr/share/gazebo-9/worlds_ in order for Gazebo to find it. The _kinect.launch_ file instead must be added on _opt/ros/melodic/share/gazebo_ros/launch_.
+For an optimized experience we have created a Gazebo world in which the Kinect is already present in the desired position, in order to start Gazebo with these settings. 
+The _kinect.world_ file must be moved for Gazebo to find it, using:
+```
+sudo su
+cd ~/catkin_ws/src/tm5-900_ros
+mv kinect.world /usr/share/gazebo-9/worlds
+``` 
+ 
+The _kinect.launch_ file instead must be added on _opt/ros/melodic/share/gazebo_ros/launch_.
 So, in order to launch Gazebo with this world you need to run: 
 ```
 roslaunch tm5_900_moveit_config tm5_900_gazebo_kinect.launch
