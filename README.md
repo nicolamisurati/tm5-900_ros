@@ -173,6 +173,10 @@ Next it adds a box on MoveIt to simulate an obstacle, and again the robot goes t
 The trajectory will be different, because the MoveIt controllers detect the box like a collision object and the trajectory is planned to avoid it. 
 
 Lastly the robot goes back to the _home_ state and the simulation is completed.
+The script can be runned by launching the following command: 
+```
+python python_interface_move_group.py
+```
 
 ### Kinect Camera Modelling on Gazebo and MoveIt
 The aim of this part of the project was to create a Gazebo model that includes a ROS depth camera plugin to view the depth camera’s output in RViz. 
@@ -232,6 +236,12 @@ It is possibile to check the topics that are being published by running in a new
 rostopic list
 ```
 
+For an optimized experience we have created a Gazebo world in which the Kinect is already present in the desired position, in order to start Gazebo with these settings. The _kinect.world_ file must be added on _usr/share/gazebo-9/worlds_ in order for Gazebo to find it. The _kinect.launch_ file instead must be added on _opt/ros/melodic/share/gazebo_ros/launch_.
+So, in order to launch Gazebo with this world you need to run: 
+```
+roslaunch tm5_900_moveit_config tm5_900_gazebo_kinect.launch
+``` 
+ 
 #### Gazebo2RViz
 Another part of the project was installing a particular package containing nodes to automatically import all entities simulated in a ROS-enabled Gazebo or described in a set of SDF files into RViz through the TF and Marker plugin.
 
