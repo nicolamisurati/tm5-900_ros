@@ -244,7 +244,12 @@ cd ~/catkin_ws/src/tm5-900_ros
 mv kinect.world /usr/share/gazebo-9/worlds
 ``` 
  
-The _kinect.launch_ file instead must be added on _opt/ros/melodic/share/gazebo_ros/launch_.
+The _kinect.launch_ file instead must be added on the ROS base path folder via: 
+```
+cd ~/catkin_ws/src/tm5-900_ros/tm5_900_moveit_config/launch
+sudo mv kinect.launch /opt/ros/melodic/share/gazebo_ros/launch 
+```
+ 
 So, in order to launch Gazebo with this world you need to run: 
 ```
 roslaunch tm5_900_moveit_config tm5_900_gazebo_kinect.launch
