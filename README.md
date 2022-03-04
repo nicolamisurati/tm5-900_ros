@@ -105,7 +105,7 @@ git clone https://github.com/ros-simulation/gazebo_ros_pkgs.git -b melodic-devel
 It is recommended to check for any missing dependencies using _rosdep_:
 ```
 rosdep update
-rosdep check --from-paths . --ignore-src --rosdistro kinetic
+rosdep check --from-paths . --ignore-src --rosdistro melodic
 ```
 and to install them via:
 ```
@@ -300,7 +300,7 @@ Below there a list of the main errors that have occurred together with the best 
    [Oracle VM VirtualBox]: <https://www.virtualbox.org/>
    [Guest Additions]: <https://www.virtualbox.org/manual/ch04.html>
    [ROS Melodic]: <http://wiki.ros.org/melodic>
-   [MoveIt!]: <https://moveit.ros.org/>
+   [MoveIt]: <https://moveit.ros.org/>
    [Gazebo]: <https://gazebosim.org/>
    [Industrial_Core]: <http://wiki.ros.org/industrial_core>
    [TechmanRobotInc]: <https://github.com/TechmanRobotInc/tmr_ros1>
